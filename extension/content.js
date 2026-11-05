@@ -73,7 +73,10 @@
     button.className = 'ytp-button';
     button.innerHTML = '<svg viewBox="0 0 36 36" aria-hidden="true"><rect x="8" y="10" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 14h18M14 19h8" fill="none" stroke="currentColor" stroke-width="2"/></svg>';
     button.addEventListener('click', event => { event.stopPropagation(); toggle(); });
-    controls.insertBefore(button, controls.querySelector('.ytp-fullscreen-button'));
+    // YouTube sometimes wraps its fullscreen button in an extra container.
+    const anchor = [...controls.children].find(child =>
+      child.matches('.ytp-fullscreen-button') || child.querySelector('.ytp-fullscreen-button'));
+    controls.insertBefore(button, anchor ?? null);
     updateButton();
   }
 

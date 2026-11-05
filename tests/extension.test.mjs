@@ -19,7 +19,7 @@ const fixture = `<!doctype html><html><head><style>
   <div id="shell"><div id="movie_player" tabindex="0">
     <div class="html5-video-container"><video class="html5-main-video"></video></div>
     <div class="ytp-chrome-bottom"><div class="ytp-right-controls">
-      <button class="ytp-fullscreen-button">Native</button>
+      <span><button class="ytp-fullscreen-button">Native</button></span>
     </div></div>
   </div></div>
   <script>
