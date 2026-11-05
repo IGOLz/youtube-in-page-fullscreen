@@ -1,10 +1,15 @@
-html.yss-active,
-html.yss-active body {
+html.yipf-active,
+html.yipf-active body {
   overflow: hidden !important;
 }
 
+/* Hide every branch outside the player, including dynamically inserted panels. */
+html.yipf-active .yipf-ancestor > :not(.yipf-ancestor):not(.yipf-player) {
+  display: none !important;
+}
+
 /* Neutralize clipping and containing blocks without moving YouTube's player. */
-html.yss-active .yss-ancestor {
+html.yipf-active .yipf-ancestor {
   transform: none !important;
   translate: none !important;
   rotate: none !important;
@@ -20,7 +25,7 @@ html.yss-active .yss-ancestor {
   z-index: auto !important;
 }
 
-html.yss-active #movie_player.yss-player {
+html.yipf-active #movie_player.yipf-player {
   position: fixed !important;
   inset: 0 !important;
   width: 100vw !important;
@@ -37,12 +42,12 @@ html.yss-active #movie_player.yss-player {
   animation: none !important;
 }
 
-html.yss-active .yss-player .html5-video-container {
+html.yipf-active .yipf-player .html5-video-container {
   width: 100% !important;
   height: 100% !important;
 }
 
-html.yss-active .yss-player video.html5-main-video {
+html.yipf-active .yipf-player video.html5-main-video {
   inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
@@ -50,15 +55,15 @@ html.yss-active .yss-player video.html5-main-video {
   transition: none !important;
 }
 
-html.yss-active .yss-player .ytp-chrome-bottom {
+html.yipf-active .yipf-player .ytp-chrome-bottom {
   left: 12px !important;
   width: calc(100% - 24px) !important;
 }
 
-html.yss-active .yss-player .ytp-gradient-bottom {
+html.yipf-active .yipf-player .ytp-gradient-bottom {
   width: 100% !important;
 }
 
-#yss-toggle svg { width: 100%; height: 100%; pointer-events: none; }
-#yss-toggle[aria-pressed="true"] { color: #82c9ff; }
-#yss-toggle:focus-visible { outline: 2px solid #82c9ff; outline-offset: -5px; }
+#yipf-toggle svg { width: 100%; height: 100%; pointer-events: none; }
+#yipf-toggle[aria-pressed="true"] { color: #82c9ff; }
+#yipf-toggle:focus-visible { outline: 2px solid #82c9ff; outline-offset: -5px; }

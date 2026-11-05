@@ -1,6 +1,6 @@
-# YouTube Senza Scatti
+# YouTube In-Page Fullscreen
 
-Il video riempie la scheda di Brave. Entrata e uscita immediate, senza passare a un altro spazio di macOS e senza modificare le animazioni del sistema.
+Il video riempie tutta l'area della pagina nella stessa scheda di Brave. Intestazione, playlist, consigli, descrizione e commenti vengono nascosti durante la vista espansa e ripristinati all'uscita.
 
 ## Installazione in Brave
 
@@ -12,6 +12,8 @@ Il video riempie la scheda di Brave. Entrata e uscita immediate, senza passare a
 6. Ricarica le schede YouTube già aperte.
 
 Conserva la cartella dove si trova: Brave legge i file da lì. Per aggiornare, sostituisci i file, premi il pulsante di ricarica sulla scheda dell'estensione e ricarica YouTube. Per rimuoverla, usa **Rimuovi** nella stessa pagina.
+
+Se stai passando dalla versione precedente con un altro nome, rimuovi prima quella da Brave e carica la nuova cartella `extension`. Non tenere attive entrambe le versioni.
 
 ## Uso
 

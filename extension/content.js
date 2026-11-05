@@ -2,7 +2,7 @@
   'use strict';
 
   const root = document.documentElement;
-  const buttonId = 'yss-toggle';
+  const buttonId = 'yipf-toggle';
   let player = null;
   let active = false;
   let ancestors = [];
@@ -17,7 +17,7 @@
   function updateButton() {
     const button = document.getElementById(buttonId);
     if (!button) return;
-    const label = active ? 'Torna alla pagina (Esc)' : 'Espandi nella scheda (F)';
+    const label = active ? 'Return to page (Esc)' : 'Fill page (F)';
     button.title = label;
     button.setAttribute('aria-label', label);
     button.setAttribute('aria-pressed', String(active));
@@ -26,9 +26,9 @@
   function exit() {
     if (!active) return;
     active = false;
-    root.classList.remove('yss-active');
-    player?.classList.remove('yss-player');
-    for (const ancestor of ancestors) ancestor.classList.remove('yss-ancestor');
+    root.classList.remove('yipf-active');
+    player?.classList.remove('yipf-player');
+    for (const ancestor of ancestors) ancestor.classList.remove('yipf-ancestor');
     ancestors = [];
     if (previousFocus?.isConnected) previousFocus.focus({ preventScroll: true });
     if (scrollPosition) window.scrollTo(...scrollPosition);
@@ -45,12 +45,12 @@
     scrollPosition = [window.scrollX, window.scrollY];
     // Keep the player in its original DOM so YouTube's event handlers survive.
     for (let parent = player.parentElement; parent && parent !== root; parent = parent.parentElement) {
-      parent.classList.add('yss-ancestor');
+      parent.classList.add('yipf-ancestor');
       ancestors.push(parent);
     }
     active = true;
-    player.classList.add('yss-player');
-    root.classList.add('yss-active');
+    player.classList.add('yipf-player');
+    root.classList.add('yipf-active');
     player.focus({ preventScroll: true });
     updateButton();
     window.dispatchEvent(new Event('resize'));
@@ -59,6 +59,15 @@
   function syncPlayer() {
     scheduled = false;
     const next = isWatchPage() ? document.querySelector('#movie_player') : null;
+    // Leave expanded view if YouTube reparents the player into a different layout.
+    if (active) {
+      let parent = player?.parentElement;
+      for (const ancestor of ancestors) {
+        if (parent !== ancestor) { exit(); break; }
+        parent = parent.parentElement;
+      }
+      if (active && parent !== root) exit();
+    }
     if (next !== player) {
       exit();
       document.getElementById(buttonId)?.remove();
