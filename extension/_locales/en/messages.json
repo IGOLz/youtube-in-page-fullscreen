@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "YouTube In-Page Fullscreen" },
+  "extDescription": { "message": "Fill the browser page with YouTube videos. Press F or double-click to expand the video in the same tab." },
+  "fillPage": { "message": "Fill page (F)" },
+  "returnToPage": { "message": "Return to page (Esc)" }
+}

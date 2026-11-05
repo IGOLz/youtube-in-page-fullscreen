@@ -1,9 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "YouTube In-Page Fullscreen",
-  "version": "1.1.1",
-  "description": "Fill the browser page with YouTube. Press F or double-click to expand the video in the same tab.",
-  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" },
+  "name": "__MSG_extName__",
+  "version": "1.2.0",
+  "description": "__MSG_extDescription__",
+  "default_locale": "en",
+  "homepage_url": "https://github.com/IGOLz/youtube-in-page-fullscreen",
+  "icons": { "16": "icons/16.png", "32": "icons/32.png", "48": "icons/48.png", "128": "icons/128.png" },
   "content_scripts": [{
     "matches": ["https://www.youtube.com/*"],
     "js": ["content.js"],

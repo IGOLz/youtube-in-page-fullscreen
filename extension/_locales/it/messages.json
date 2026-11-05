@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "YouTube In-Page Fullscreen" },
+  "extDescription": { "message": "Espandi i video di YouTube a tutta pagina nel browser. Premi F o fai doppio clic per riempire la scheda." },
+  "fillPage": { "message": "Riempi la pagina (F)" },
+  "returnToPage": { "message": "Torna alla pagina (Esc)" }
+}

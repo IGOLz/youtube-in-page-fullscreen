@@ -114,9 +114,16 @@ test('unpacked extension in Chromium/Brave', async t => {
     });
 
     await t.test('custom button and double click toggle; exit restores focus and scroll', async () => {
+      const locales = await Promise.all(['en', 'it'].map(async lang =>
+        JSON.parse(await readFile(path.join(extension, '_locales', lang, 'messages.json'), 'utf8'))));
+      const label = () => page.locator('#yipf-toggle').getAttribute('aria-label');
+      const fillLabel = await label();
+      assert.ok(locales.some(messages => messages.fillPage.message === fillLabel), fillLabel);
       await page.locator('#yipf-toggle').click();
       assert.equal(await active(), true);
       assert.equal(await page.locator('#yipf-toggle').getAttribute('aria-pressed'), 'true');
+      const exitLabel = await label();
+      assert.ok(locales.some(messages => messages.returnToPage.message === exitLabel), exitLabel);
       await page.locator('#yipf-toggle').click();
       assert.equal(await active(), false);
       await page.locator('video').dblclick({ position: { x: 100, y: 100 } });

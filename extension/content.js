@@ -10,6 +10,12 @@
   let scrollPosition = null;
   let scheduled = false;
 
+  const message = (key, fallback) => globalThis.chrome?.i18n?.getMessage(key) || fallback;
+  const labels = {
+    fill: message('fillPage', 'Fill page (F)'),
+    exit: message('returnToPage', 'Return to page (Esc)'),
+  };
+
   const isWatchPage = () => location.pathname === '/watch' && new URLSearchParams(location.search).has('v');
   const isEditable = (event) => event.composedPath().some(node => node instanceof Element &&
     (node.matches('input, textarea, select, [role="textbox"]') || node.isContentEditable));
@@ -17,7 +23,7 @@
   function updateButton() {
     const button = document.getElementById(buttonId);
     if (!button) return;
-    const label = active ? 'Return to page (Esc)' : 'Fill page (F)';
+    const label = active ? labels.exit : labels.fill;
     button.title = label;
     button.setAttribute('aria-label', label);
     button.setAttribute('aria-pressed', String(active));

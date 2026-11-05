@@ -1,45 +1,101 @@
-# YouTube In-Page Fullscreen
+<p align="center">
+  <img src="assets/icon.svg" width="112" alt="YouTube In-Page Fullscreen logo">
+</p>
 
-Il video riempie tutta l'area della pagina nella stessa scheda di Brave. Intestazione, playlist, consigli, descrizione e commenti vengono nascosti durante la vista espansa e ripristinati all'uscita.
+<h1 align="center">YouTube In-Page Fullscreen</h1>
 
-## Installazione in Brave
+<p align="center">
+  Expand YouTube videos to fill the browser page, in the same tab.<br>
+  No macOS fullscreen animation, no new Space, nothing to configure.
+</p>
 
-1. Scarica il repository con **Code → Download ZIP** ed estrailo, oppure usa la copia locale già preparata.
-2. Apri `brave://extensions`.
-3. Attiva **Modalità sviluppatore** in alto a destra.
-4. Premi **Carica estensione non pacchettizzata** / **Load unpacked**.
-5. Seleziona la cartella **extension**, quella che contiene `manifest.json`.
-6. Ricarica le schede YouTube già aperte.
+<p align="center">
+  <a href="https://github.com/IGOLz/youtube-in-page-fullscreen/releases/latest"><img src="https://img.shields.io/github/v/release/IGOLz/youtube-in-page-fullscreen?style=flat-square" alt="Latest release"></a>
+  <a href="https://github.com/IGOLz/youtube-in-page-fullscreen/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/IGOLz/youtube-in-page-fullscreen/test.yml?branch=main&style=flat-square&label=tests" alt="Tests"></a>
+  <img src="https://img.shields.io/badge/manifest-v3-4f6df5?style=flat-square" alt="Manifest V3">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/IGOLz/youtube-in-page-fullscreen?style=flat-square" alt="MIT license"></a>
+</p>
 
-Conserva la cartella dove si trova: Brave legge i file da lì. Per aggiornare, sostituisci i file, premi il pulsante di ricarica sulla scheda dell'estensione e ricarica YouTube. Per rimuoverla, usa **Rimuovi** nella stessa pagina.
+<p align="center">
+  <b>English</b> · <a href="readme_i18n/README_it_IT.md">Italiano</a>
+</p>
 
-Se stai passando dalla versione precedente con un altro nome, rimuovi prima quella da Brave e carica la nuova cartella `extension`. Non tenere attive entrambe le versioni.
+<p align="center">
+  <img src="assets/preview.svg" width="100%" alt="Before: a YouTube watch page with header, recommendations and comments. After pressing F: the video fills the whole browser page.">
+</p>
 
-## Uso
+## About
 
-| Comando | Risultato |
+On macOS, YouTube's native fullscreen moves the browser into a new Space. Leaving it plays a slow sliding animation. This extension adds an in-page mode instead: the player covers the entire page area of the current tab and everything else on the page is hidden until you return. Entering and leaving are instant.
+
+Combine it with the browser's own fullscreen (<kbd>Ctrl</kbd> <kbd>⌘</kbd> <kbd>F</kbd>) to get a true full-screen video that you can shrink back to the page without any macOS transition.
+
+> [!NOTE]
+> This is an independent open-source project. It is not affiliated with, endorsed by or sponsored by YouTube or Google.
+
+## Features
+
+| | |
 | --- | --- |
-| `F` | Espande il video nella scheda o torna alla pagina |
-| Doppio clic sul video | Alterna le due viste |
-| Nuovo pulsante a forma di finestra, accanto al tutto schermo | Alterna le due viste |
-| `Esc` | Torna alla pagina |
-| Pulsante tutto schermo originale di YouTube | Usa ancora il tutto schermo nativo |
+| ⚡ **Instant** | Expands and restores without animation, in the same tab |
+| ⌨️ **Keyboard first** | <kbd>F</kbd> toggles, <kbd>Esc</kbd> returns. Ignored while you type in search or comments |
+| 🖱️ **Mouse friendly** | Double-click the video, or use the new button next to YouTube's fullscreen button |
+| 🧹 **Distraction free** | Header, playlist, recommendations, description and comments are hidden while expanded |
+| 🎛️ **Native controls** | Playback, captions, settings and the original fullscreen button keep working |
+| ↩️ **Restores your place** | Scroll position and keyboard focus come back when you exit |
+| 🔒 **Private by design** | No permissions, no network requests, no analytics, no stored data |
+| 🌍 **Localized** | English and Italian |
 
-Le scorciatoie non intervengono mentre scrivi nella ricerca o nei commenti. Riproduzione, sottotitoli e controlli restano quelli di YouTube. Il video rimane nel suo punto originale nel DOM; l'estensione ne cambia temporaneamente le dimensioni e ripristina lo scorrimento all'uscita. La navigazione verso un altro video chiude la vista espansa.
+## Installation
 
-## Cosa aspettarsi
+The extension is not on the Chrome Web Store yet. It installs in a minute as an unpacked extension in Brave, Chrome, Edge, Arc, Vivaldi or any other Chromium browser.
 
-Questa modalità riempie **l'area della pagina**, non nasconde le schede o la barra degli indirizzi di Brave. Se metti prima Brave a tutto schermo, puoi espandere e ridurre i video dentro quello spazio senza uscirne. Uscire successivamente dal tutto schermo di Brave mantiene l'animazione di macOS.
+1. Download `youtube-in-page-fullscreen-vX.Y.Z.zip` from the [latest release](https://github.com/IGOLz/youtube-in-page-fullscreen/releases/latest) and unzip it.
+2. Open the extensions page: `brave://extensions`, `chrome://extensions` or `edge://extensions`.
+3. Turn on **Developer mode**.
+4. Click **Load unpacked** and select the unzipped folder, the one that contains `manifest.json`.
+5. Reload any YouTube tabs that were already open.
 
-La prima versione supporta le normali pagine `www.youtube.com/watch`. Shorts, player incorporati e YouTube Music sono esclusi. Funziona anche su altri sistemi con browser Chromium, ma nasce per Brave su Mac. Cambiamenti futuri al player YouTube possono richiedere un aggiornamento dei selettori.
+Keep the folder where it is: the browser loads the extension from there.
 
-## Privacy e struttura
+**Updating:** replace the folder contents with the new release, click the reload button on the extension card, then reload YouTube.
 
-Manifest V3, un content script e un foglio CSS. Accesso limitato a `https://www.youtube.com/*`, necessario anche sulla home per seguire la navigazione interna verso un video. Nessun background worker, popup, analytics, richiesta di rete, salvataggio dati o permesso aggiuntivo. L'estensione non modifica gli annunci o le impostazioni di Shields.
+**From source:** clone the repository and load the `extension/` folder. It runs as-is, with no build step.
 
-`extension/` è pronta da installare: nessuna compilazione o dipendenza. Gli strumenti npm servono soltanto ai test.
+## Usage
 
-## Verifica per sviluppatori
+Open any video on `youtube.com/watch`.
+
+| Action | Result |
+| --- | --- |
+| <kbd>F</kbd> | Fill the page, or return to it |
+| Double-click the video | Fill the page, or return to it |
+| New window-shaped button in the player bar | Fill the page, or return to it |
+| <kbd>Esc</kbd> | Return to the page |
+| YouTube's original fullscreen button | Native fullscreen, as before |
+
+Navigating to another video, or YouTube moving the player into the miniplayer, returns to the normal page automatically.
+
+## Limitations
+
+- In-page mode fills the **page area**. The browser's tabs and address bar stay visible unless the browser itself is in fullscreen.
+- Only regular `www.youtube.com/watch` pages. Shorts, embedded players and YouTube Music are not supported.
+- YouTube changes its markup from time to time. If something breaks, please [open an issue](https://github.com/IGOLz/youtube-in-page-fullscreen/issues/new?template=bug_report.yml).
+
+## Privacy
+
+The extension is one content script and one stylesheet, built on Manifest V3. It requests no permissions and only runs on `https://www.youtube.com/*`, including the home page so it can follow YouTube's in-app navigation to a video. It has no background worker, popup, analytics or network access, and it stores nothing. It does not touch ads or Brave Shields.
+
+## Development
+
+```text
+extension/      the extension, loaded as-is by the browser
+  _locales/     English and Italian strings
+tests/          end-to-end tests with Playwright
+assets/         logo and README artwork (SVG sources)
+```
+
+Run the tests with Playwright's Chromium:
 
 ```sh
 npm ci
@@ -47,16 +103,24 @@ npx playwright install chromium
 npm test
 ```
 
-Per provare l'estensione reale in Brave headless su macOS, con un profilo temporaneo separato da quello personale:
+Or with an installed browser, using a temporary profile that never touches your own:
 
 ```sh
 BROWSER_PATH='/Applications/Brave Browser.app/Contents/MacOS/Brave Browser' npm test
 ```
 
-I test caricano l'estensione non pacchettizzata su una pagina di prova servita all'indirizzo YouTube tramite intercettazione locale. Verificano dimensioni del player, ridimensionamento finestra, scorciatoie, campi di testo, focus, scroll, tutto schermo nativo, navigazione e sostituzione del player. Non verificano la riproduzione, gli annunci o il layout del sito YouTube reale, che richiedono una prova manuale.
+The tests load the unpacked extension on a fixture page served at a YouTube URL. They cover player size, window resizing, shortcuts, text fields, focus, scroll, native fullscreen, navigation and player replacement. Real playback, ads and the live YouTube layout still need a quick manual check.
 
-## Ispirazione
+**Releasing:** bump `version` in `extension/manifest.json` and `package.json`, then push a `vX.Y.Z` tag. GitHub Actions packages `extension/` and publishes the release.
 
-Ispirata all'idea di [ibnuh/youtube-full-screen-tab](https://github.com/ibnuh/youtube-full-screen-tab). Implementazione scritta da zero. Qui `F` usa direttamente la modalità scheda, senza popup o preferenze; il pulsante nativo rimane disponibile.
+## Contributing
 
-Licenza MIT.
+Bug reports and pull requests are welcome. For a change in behavior, open an issue first to discuss it. Please keep the extension dependency-free and permission-free, and add or update a test in `tests/` for anything you fix.
+
+## Acknowledgements
+
+The idea comes from [ibnuh/youtube-full-screen-tab](https://github.com/ibnuh/youtube-full-screen-tab). This implementation is written from scratch: <kbd>F</kbd> goes straight to in-page mode, with no popup or settings, and YouTube's native fullscreen button stays available.
+
+## License
+
+[MIT](LICENSE) © IGOLz
