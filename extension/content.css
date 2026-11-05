@@ -64,6 +64,22 @@ html.yipf-active .yipf-player .ytp-gradient-bottom {
   width: 100% !important;
 }
 
-#yipf-toggle svg { width: 100%; height: 100%; pointer-events: none; }
+#yipf-toggle {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  padding: 0 !important;
+  line-height: 0;
+}
+
+/* YouTube's generic SVG rules otherwise make this icon overflow its button. */
+#yipf-toggle svg {
+  display: block;
+  width: 36px !important;
+  height: 36px !important;
+  padding: 0 !important;
+  flex: none;
+  pointer-events: none;
+}
 #yipf-toggle[aria-pressed="true"] { color: #82c9ff; }
 #yipf-toggle:focus-visible { outline: 2px solid #82c9ff; outline-offset: -5px; }
