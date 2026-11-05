@@ -1,0 +1,8 @@
+{
+  "name": "youtube-senza-scatti",
+  "version": "1.0.0",
+  "private": true,
+  "description": "YouTube tab fullscreen for Brave, without macOS Space transitions.",
+  "scripts": { "test": "node --test tests/*.test.mjs" },
+  "devDependencies": { "playwright": "^1.56.1" }
+}

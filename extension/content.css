@@ -1,0 +1,64 @@
+html.yss-active,
+html.yss-active body {
+  overflow: hidden !important;
+}
+
+/* Neutralize clipping and containing blocks without moving YouTube's player. */
+html.yss-active .yss-ancestor {
+  transform: none !important;
+  translate: none !important;
+  rotate: none !important;
+  scale: none !important;
+  perspective: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  will-change: auto !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  z-index: auto !important;
+}
+
+html.yss-active #movie_player.yss-player {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  z-index: 2147483647 !important;
+  background: #000 !important;
+  transition: none !important;
+  animation: none !important;
+}
+
+html.yss-active .yss-player .html5-video-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+html.yss-active .yss-player video.html5-main-video {
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  transition: none !important;
+}
+
+html.yss-active .yss-player .ytp-chrome-bottom {
+  left: 12px !important;
+  width: calc(100% - 24px) !important;
+}
+
+html.yss-active .yss-player .ytp-gradient-bottom {
+  width: 100% !important;
+}
+
+#yss-toggle svg { width: 100%; height: 100%; pointer-events: none; }
+#yss-toggle[aria-pressed="true"] { color: #82c9ff; }
+#yss-toggle:focus-visible { outline: 2px solid #82c9ff; outline-offset: -5px; }
