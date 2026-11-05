@@ -10,14 +10,11 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/IGOLz/youtube-in-page-fullscreen/releases/latest"><img src="https://img.shields.io/github/v/release/IGOLz/youtube-in-page-fullscreen?style=flat-square" alt="Latest release"></a>
-  <a href="https://github.com/IGOLz/youtube-in-page-fullscreen/actions/workflows/test.yml"><img src="https://img.shields.io/github/actions/workflow/status/IGOLz/youtube-in-page-fullscreen/test.yml?branch=main&style=flat-square&label=tests" alt="Tests"></a>
-  <img src="https://img.shields.io/badge/manifest-v3-4f6df5?style=flat-square" alt="Manifest V3">
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/IGOLz/youtube-in-page-fullscreen?style=flat-square" alt="MIT license"></a>
-</p>
-
-<p align="center">
-  <b>English</b> · <a href="readme_i18n/README_it_IT.md">Italiano</a>
+  <a href="https://github.com/IGOLz/youtube-in-page-fullscreen/releases/latest"><img src="assets/badges/download.svg" alt="Download the latest release"></a>
+  <a href="https://github.com/IGOLz/youtube-in-page-fullscreen/actions/workflows/test.yml"><img src="https://github.com/IGOLz/youtube-in-page-fullscreen/actions/workflows/test.yml/badge.svg?branch=main" alt="Tests"></a>
+  <img src="assets/badges/manifest.svg" alt="Manifest V3">
+  <img src="assets/badges/browsers.svg" alt="Works in Brave, Chrome and Edge">
+  <a href="LICENSE"><img src="assets/badges/license.svg" alt="MIT license"></a>
 </p>
 
 <p align="center">
